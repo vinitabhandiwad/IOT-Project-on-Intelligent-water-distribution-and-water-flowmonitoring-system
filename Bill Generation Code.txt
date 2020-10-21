@@ -1,0 +1,13 @@
+valuelen=msg.payload.length
+
+flow1=0;
+
+for (i=0;i<valuelen;i++)
+{
+    flow1=msg.payload[i].waterflow+flow1;
+}
+
+bill=flow1*1/1000;
+
+msg.payload=bill+ "₹";
+return msg;
